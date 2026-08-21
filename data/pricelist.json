@@ -1,0 +1,181 @@
+{
+  "updatedAt": "2026",
+  "dealer": "Tunas Toyota Gatot Subroto Bandung",
+  "categories": [
+    {
+      "model": "Innova Zenix",
+      "features": [
+        {
+          "id": "tss-radar",
+          "title": "Toyota Safety Sense 3.0 & 360 Camera",
+          "description": "Kamera Panoramic View 360 derajat & radar keselamatan aktif PCS, LDA, serta DRCC."
+        },
+        {
+          "id": "alloy-wheel",
+          "title": "18\" Premium Alloy Wheel",
+          "description": "Desain velg dual-tone 18 inci memberikan karakter gagah dan kokoh."
+        },
+        {
+          "id": "bsm-mirror",
+          "title": "Blind Spot Monitor (BSM)",
+          "description": "Sensor spion memberikan peringatan visual saat ada objek di titik buta."
+        },
+        {
+          "id": "panoramic-roof",
+          "title": "Panoramic Sunroof & Ambient Light",
+          "description": "Atap kaca transparan dengan pencahayaan ambient LED biru untuk nuansa kabin mewah."
+        }
+      ],
+      "types": [
+        { "name": "Innova Zenix 2.0 G CVT", "nonPremium": "439.900.000", "premium": "442.900.000" },
+        { "name": "Innova Zenix 2.0 V CVT", "nonPremium": "486.200.000", "premium": "489.200.000" },
+        { "name": "Innova Zenix 2.0 G HV CVT", "nonPremium": "477.500.000", "premium": "480.400.000" },
+        { "name": "Innova Zenix 2.0 V HV Modelista", "nonPremium": "552.800.000", "premium": "555.700.000" },
+        { "name": "Innova Zenix 2.0 Q HV Modelista CVT TSS", "nonPremium": "628.200.000", "premium": "631.100.000" }
+      ]
+    },
+    {
+      "model": "New Agya",
+      "types": [
+        { "name": "AGYA G 1.2", "manual": "185.100.000", "automatic": "201.300.000" },
+        { "name": "AGYA STYLIX", "manual": "-", "automatic": "204.800.000" }
+      ]
+    },
+    {
+      "model": "Calya",
+      "types": [
+        { "name": "Calya E", "manual": "177.200.000", "automatic": "-" },
+        { "name": "Calya G", "manual": "182.700.000", "automatic": "197.300.000" }
+      ]
+    },
+    {
+      "model": "New Avanza",
+      "types": [
+        { "name": "New Avanza 1.3 E", "manual": "247.500.000", "automatic": "262.700.000" },
+        { "name": "New Avanza 1.5 G", "manual": "270.700.000", "automatic": "285.500.000" }
+      ]
+    },
+    {
+      "model": "Veloz Hybrid",
+      "types": [
+        { "name": "1.5 V HV", "nonPremium": "303.000.000", "premium": "304.500.000" },
+        { "name": "1.5 Q HV", "nonPremium": "325.000.000", "premium": "326.500.000" },
+        { "name": "1.5 Q Mod HV One Tone", "nonPremium": "350.000.000", "premium": "351.500.000" },
+        { "name": "1.5 Q Mod HV Two Tone", "nonPremium": "352.500.000", "premium": "354.000.000" },
+        { "name": "1.5 Q Mod HV TSS One Tone", "nonPremium": "385.500.000", "premium": "386.500.000" },
+        { "name": "1.5 Q Mod HV TSS Two Tone", "nonPremium": "387.500.000", "premium": "389.000.000" }
+      ]
+    },
+    {
+      "model": "All New Fortuner",
+      "types": [
+        { "name": "FORTUNER 2.4 G 4X2", "manual": "586.500.000", "automatic": "604.200.000" },
+        { "name": "FORTUNER 2.7 SRZ 4X2", "manual": "-", "automatic": "627.500.000" },
+        { "name": "FORTUNER 2.8 VRZ 4X2", "manual": "-", "automatic": "670.100.000" },
+        { "name": "FORTUNER 2.8 VRZ 4X2 GR TSS ONE TONE NON PREMIUM COLOR", "manual": "-", "automatic": "680.700.000" },
+        { "name": "FORTUNER 2.8 VRZ 4X2 GR TSS ONE TONE PREMIUM COLOR", "manual": "-", "automatic": "683.700.000" },
+        { "name": "FORTUNER 2.8 VRZ 4X2 GR TSS TWO TONE NON PREMIUM COLOR", "manual": "-", "automatic": "686.300.000" },
+        { "name": "FORTUNER 2.8 VRZ 4X4 GR TSS ONE TONE PREMIUM COLOR", "manual": "-", "automatic": "795.400.000" }
+      ]
+    },
+    {
+      "model": "All New Rush",
+      "types": [
+        { "name": "Rush G 1500", "manual": "297.100.000", "automatic": "308.000.000" },
+        { "name": "Rush S 1500 GR Sport", "manual": "312.500.000", "automatic": "323.200.000" }
+      ]
+    },
+    {
+      "model": "Raize",
+      "types": [
+        { "name": "Raize G 1.2 One Tone", "manual": "246.900.000", "automatic": "262.100.000" },
+        { "name": "Raize G 1.0 Turbo One Tone", "manual": "266.100.000", "automatic": "281.200.000" },
+        { "name": "Raize GR Sport 1.0 Turbo One Tone", "manual": "-", "automatic": "295.400.000" },
+        { "name": "Raize GR Sport 1.0 Turbo TSS Two Tone", "manual": "-", "automatic": "320.300.000" }
+      ]
+    },
+    {
+      "model": "Yaris Cross Hybrid",
+      "types": [
+        { "name": "Yaris Cross 1.5 G CVT", "nonPremium": "399.000.000", "premium": "401.500.000" },
+        { "name": "Yaris Cross 1.5 S CVT TSS", "nonPremium": "451.700.000", "premium": "452.600.000" },
+        { "name": "Yaris Cross 1.5 S GR CVT TSS", "nonPremium": "461.100.000", "premium": "463.600.000" }
+      ]
+    },
+    { "model": "All New CAMRY", "types": [
+      { "name": "Camry 2.5 V", "col1": "857.000.000", "col2": "860.100.000" },
+      { "name": "Camry 2.5 L Hybrid", "col1": "983.000.000", "col2": "986.200.000" }
+    ] },
+    { "model": "All New HIACE", "types": [
+      { "name": "Hiace Commuter", "col1": "578.900.000", "col2": "-" },
+      { "name": "New Hiace Premio 2.8", "col1": "679.100.000", "col2": "-" }
+    ] },
+    { "model": "Corolla Altis", "types": [
+      { "name": "Altis 1.8 V", "col1": "587.600.000", "col2": "590.600.000" },
+      { "name": "Altis Hybrid", "col1": "641.400.000", "col2": "644.500.000" },
+      { "name": "Altis 1.8 HV GRS", "col1": "647.500.000", "col2": "650.600.000" }
+    ] },
+    { "model": "VOXY", "types": [{ "name": "Voxy 2.0", "col1": "634.300.000", "col2": "637.500.000" }] },
+    { "model": "New Vios", "types": [
+      { "name": "New Vios 1.5 G CVT", "col1": "378.000.000", "col2": "379.500.000" },
+      { "name": "New Vios 1.5 G CVT TSS", "col1": "391.200.000", "col2": "392.800.000" }
+    ] },
+    { "model": "WOS HYBRID", "types": [
+      { "name": "1.5 HV One Tone", "col1": "460.600.000", "col2": "463.100.000" },
+      { "name": "1.5 HV Two Tone", "col1": "464.600.000", "col2": "465.600.000" }
+    ] },
+    { "model": "Innova Reborn", "types": [{ "name": "Innova 2.4 G Diesel", "col1": "421.100.000", "col2": "442.700.000" }] },
+    { "model": "GR 86", "types": [{ "name": "GR 86 2.4 L", "col1": "1.053.800.000", "col2": "1.091.800.000" }] },
+    { "model": "SUPRA", "types": [{ "name": "Supra 3.0 L AT", "col1": "2.276.400.000", "col2": "2.276.400.000" }] },
+    { "model": "Hilux Old Model", "types": [
+      { "name": "Hilux Single Cabin 2.4 Diesel 4x4", "col1": "426.100.000", "col2": "-" },
+      { "name": "Hilux Double Cabin 2.4 E Diesel 4x4", "col1": "458.600.000", "col2": "-" },
+      { "name": "Hilux Double Cabin 2.4 G Diesel 4x4", "col1": "499.600.000", "col2": "-" },
+      { "name": "Hilux Double Cabin 2.4 V Diesel 4x4", "col1": "-", "col2": "575.100.000" },
+      { "name": "Hilux Double Cabin BEV", "col1": "-", "col2": "1.019.000.000" }
+    ] },
+    { "model": "New Hilux", "types": [
+      { "name": "Hilux Single Cabin 2.8 Diesel 4x4", "col1": "426.100.000", "col2": "-" },
+      { "name": "Hilux Double Cabin 2.4 E Diesel 4x4", "col1": "468.600.000", "col2": "-" },
+      { "name": "Hilux Double Cabin 2.4 G Diesel 4x4", "col1": "499.600.000", "col2": "-" },
+      { "name": "Hilux Double Cabin 2.4 V Diesel 4x4", "col1": "-", "col2": "575.100.000" },
+      { "name": "Hilux Double Cabin BEV", "col1": "-", "col2": "1.019.000.000" }
+    ] },
+    { "model": "All New ALPHARD", "types": [
+      { "name": "New Alphard 2.5 G CVT", "col1": "1.652.100.000", "col2": "1.655.600.000" },
+      { "name": "New Alphard 2.5 G CVT Hybrid", "col1": "1.737.400.000", "col2": "1.741.000.000" },
+      { "name": "New Vellfire 2.5 VIP CVT Hybrid", "col1": "1.872.800.000", "col2": "1.876.300.000" },
+      { "name": "Alphard 2.5 XE", "col1": "1.288.000.000", "col2": "1.291.500.000" },
+      { "name": "Alphard 2.5 XE HV", "col1": "1.388.000.000", "col2": "1.391.500.000" }
+    ] },
+    { "model": "BZ4X", "types": [{ "name": "BZ4X", "col1": "799.400.000", "col2": "834.700.000" }] },
+    { "model": "Corolla Cross", "types": [
+      { "name": "Corolla Cross 1.8 Hybrid", "col1": "610.100.000", "col2": "613.200.000" },
+      { "name": "Corolla Cross 1.8 Hybrid GR-S One Tone", "col1": "650.000.000", "col2": "653.100.000" }
+    ] },
+    { "model": "All New YARIS CROSS", "types": [
+      { "name": "Yaris Cross 1.5 G MT", "col1": "362.500.000", "col2": "-" },
+      { "name": "Yaris Cross 1.5 G CVT", "col1": "376.000.000", "col2": "-" },
+      { "name": "Yaris Cross 1.5 S CVT TSS", "col1": "420.000.000", "col2": "422.500.000" },
+      { "name": "Yaris Cross 1.5 S GR CVT TSS", "col1": "429.400.000", "col2": "432.400.000" }
+    ] },
+    { "model": "LAND CRUISER (INDENT)", "types": [
+      { "name": "300 VX-R 4X4 AT", "col1": "2.635.400.000", "col2": "2.641.500.000" },
+      { "name": "300 GR-S 4X4 AT", "col1": "2.716.300.000", "col2": "2.722.300.000" }
+    ] },
+    { "model": "All New HILUX RANGGA", "types": [
+      { "name": "Hilux Rangga Cab-Chasis PU 2.0 Std", "col1": "199.200.000", "col2": "-" },
+      { "name": "Hilux Rangga Cab-Chasis MB 2.0 Std", "col1": "199.200.000", "col2": "-" },
+      { "name": "Hilux Rangga Pick Up 2.0 Std", "col1": "204.200.000", "col2": "-" },
+      { "name": "Hilux Rangga Pick Up 2.0 Std 3 Way", "col1": "205.200.000", "col2": "-" },
+      { "name": "Hilux Rangga Pick Up 2.0 High", "col1": "226.500.000", "col2": "-" },
+      { "name": "Hilux Rangga Cab-Chasis PU 2.4 DSL Std", "col1": "254.600.000", "col2": "-" },
+      { "name": "Hilux Rangga Cab-Chasis MB 2.4 DSL Std", "col1": "254.600.000", "col2": "-" },
+      { "name": "Hilux Rangga Pick Up 2.4 DSL Std", "col1": "259.700.000", "col2": "-" },
+      { "name": "Hilux Rangga Pick Up 2.4 DSL Std 3 Way", "col1": "260.600.000", "col2": "-" },
+      { "name": "Hilux Rangga Pick Up 2.4 DSL HIGH", "col1": "294.300.000", "col2": "315.500.000" },
+      { "name": "Hilux Rangga Cab-Chasis PU 2.4 DSL HIGH", "col1": "-", "col2": "309.900.000" },
+      { "name": "Hilux Rangga Cab-Chasis MB 2.4 DSL HIGH", "col1": "-", "col2": "309.900.000" }
+    ] }
+  ]
+}

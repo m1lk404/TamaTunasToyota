@@ -1,0 +1,32 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Local tooling and editor files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and local output
+*.log
+coverage/
+dist/
+build/
+
+# Workspace-local shell and agent configuration; never deploy these files
+/.bash_profile
+/.bashrc
+/.gitconfig
+/.mcp.json
+/.profile
+/.ripgreprc
+/.zprofile
+/.zshrc
+/.claude/

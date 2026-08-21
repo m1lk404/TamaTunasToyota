@@ -1,0 +1,185 @@
+{
+  "source": "https://www.toyota.astra.co.id",
+  "capturedAt": "2026-08-19",
+  "scope": "Spesifikasi teknis resmi yang diverifikasi dari halaman produk Toyota Astra Motor. Harga dan promo sengaja tidak disimpan.",
+  "officialCatalogPages": [
+    { "model": "New Calya", "url": "https://www.toyota.astra.co.id/product/calya" },
+    { "model": "All New Avanza", "url": "https://www.toyota.astra.co.id/product/avanza" },
+    { "model": "New Veloz Hybrid EV", "url": "https://www.toyota.astra.co.id/product/veloz-hybrid-ev" },
+    { "model": "New Kijang Innova", "url": "https://www.toyota.astra.co.id/product/kijang-innova" },
+    { "model": "All New Kijang Innova Zenix", "url": "https://www.toyota.astra.co.id/product/kijang-innova-zenix" },
+    { "model": "All New Kijang Innova Zenix Hybrid EV", "url": "https://www.toyota.astra.co.id/product/kijang-innova-zenix-hybrid-ev" },
+    { "model": "All New Voxy", "url": "https://www.toyota.astra.co.id/product/voxy" },
+    { "model": "New Alphard XE", "url": "https://www.toyota.astra.co.id/product/alphard-xe" },
+    { "model": "New Alphard XE Hybrid EV", "url": "https://www.toyota.astra.co.id/product/alphard-xe-hybrid-ev" },
+    { "model": "New Alphard Hybrid EV", "url": "https://www.toyota.astra.co.id/product/alphard-hev" },
+    { "model": "New Vellfire Hybrid EV", "url": "https://www.toyota.astra.co.id/product/vellfire-hev" }
+  ],
+  "products": [
+    {
+      "model": "Innova Zenix Hybrid EV",
+      "sourceUrl": "https://www.toyota.astra.co.id/product/kijang-innova-zenix-hybrid-ev#specs",
+      "availableTypes": [
+        "2.0 Q HV CVT TSS Modellista",
+        "2.0 V HV CVT TSS",
+        "2.0 G HV CVT"
+      ],
+      "specifications": {
+        "dimensions": {
+          "overallLengthMm": 4755,
+          "overallWidthMm": 1850,
+          "overallHeightMm": 1795,
+          "wheelbaseMm": 2850,
+          "groundClearanceMm": 185,
+          "frontTreadMm": 1550,
+          "rearTreadMm": 1570
+        },
+        "engine": {
+          "name": "M20A-FXS 4 cylinders, in-line 16-Valve DOHC, chain drive Dual VVT-i",
+          "displacementCc": 1987,
+          "boreAndStrokeMm": "80.5 x 97.6",
+          "compressionRatio": "14.0:1",
+          "fuelSystem": "Direct injection, port injection D-4S system",
+          "fuelTankCapacityL": 52,
+          "maximumPower": "186 PS system; 152 PS engine at 6000 rpm; 113 PS motor",
+          "maximumTorque": "19.1 kgm engine at 4400-5200 rpm; 21 kgm motor"
+        },
+        "chassis": {
+          "driveSystem": "2WD (FF)",
+          "transmission": "e-CVT",
+          "suspension": "MacPherson Strut front / Torsion Beam rear",
+          "stabilizer": "Front and rear",
+          "brake": "16 DISC",
+          "parkingBrake": "Electric Parking Brake + Brake Hold",
+          "tireAndDiscWheel": "225/50 R18 with Super Chrome",
+          "spareTire": "205/65R16 Steel"
+        },
+        "safety": {
+          "airbag": "Front driver and passenger, side, curtain side airbag",
+          "parkingSensor": "With corner sensor",
+          "vscAndHsa": "With",
+          "parkingCamera": "With Panoramic View Monitor",
+          "childRestraint": "ISOFIX + Tether",
+          "dvr": "With",
+          "toyotaSafetySense": "Toyota Safety Sense 3.0",
+          "blindSpotMonitoring": "With",
+          "smartEntry": "With Smart Entry",
+          "vehicleApproachNotice": "With"
+        }
+      }
+    },
+    {
+      "model": "Veloz Hybrid EV",
+      "sourceUrl": "https://www.toyota.astra.co.id/product/veloz-hybrid-ev#specs",
+      "availableTypes": [
+        "1.5 Q Hybrid CVT TSS Modellista",
+        "1.5 Q Hybrid CVT Modellista",
+        "1.5 Q Hybrid CVT",
+        "1.5 V Hybrid CVT"
+      ],
+      "specifications": {
+        "dimensions": {
+          "overallLengthMm": 4512,
+          "overallWidthMm": 1780,
+          "overallHeightMm": 1700,
+          "wheelbaseMm": 2750,
+          "groundClearanceMm": 205,
+          "frontTreadMm": 1515,
+          "rearTreadMm": 1510
+        },
+        "engine": {
+          "name": "2NR-VEX",
+          "engineType": "4 Cylinders, Inline 16-valves DOHC with Dual-VVT-i",
+          "displacementCc": 1496,
+          "maximumPowerEngine": "91 PS at 5500 rpm",
+          "maximumPowerElectricMotorPs": 80,
+          "maximumPowerSystemPs": 111,
+          "maximumTorqueEngine": "121 Nm at 4000-4800 rpm",
+          "maximumTorqueElectricMotor": "141 Nm",
+          "transmission": "CVT",
+          "emissionCertification": "EURO 4",
+          "fuelType": "Gasoline",
+          "fuelSystem": "Electronic Fuel Injection (EFI)",
+          "fuelTankCapacityL": 43
+        },
+        "chassis": {
+          "driveSystem": "Two-Wheel Drive FF (FWD)",
+          "minimumTurningRadiusM": 5.2,
+          "steeringSystem": "Electric Power Steering (EPS)",
+          "steeringColumn": "Tilt & Telescopic",
+          "frontSuspension": "MacPherson Strut",
+          "rearSuspension": "Torsion Beam",
+          "frontBrake": "16 inch Disc",
+          "rearBrake": "Disc with EPB",
+          "brakingSystem": "ABS + EBD + BA",
+          "parkingBrake": "Electrical Switch with Auto Brake Hold",
+          "tireSize": "205/50 R17 Alloy (Black)"
+        },
+        "safety": {
+          "airbag": "6 Airbags: driver, passenger, side, curtain",
+          "antiTheft": "Alarm & Immobilizer",
+          "emergencyBrakeSignal": "With",
+          "parkingSensor": "Front & Rear Clearance Sonar"
+        }
+      }
+    },
+    {
+      "model": "Calya",
+      "sourceUrl": "https://www.toyota.astra.co.id/product/calya#specs",
+      "availableTypes": [
+        "1.2 E STD M/T Basic",
+        "1.2 E M/T Basic",
+        "1.2 G M/T Basic",
+        "1.2 G A/T Basic"
+      ],
+      "specifications": {
+        "dimensions": {
+          "overallLengthMm": 4110,
+          "overallWidthMm": 1655,
+          "overallHeightMm": 1600,
+          "wheelbaseMm": 2525,
+          "frontTreadMm": 1460,
+          "rearTreadMm": 1465,
+          "groundClearanceMm": 180,
+          "frontOverhangMm": 630,
+          "rearOverhangMm": 915
+        },
+        "engine": {
+          "name": "3NR-VE (1.2L)",
+          "engineType": "In-line 4 Cylinder, 16 Valve, DOHC, Dual VVT-i",
+          "displacementCc": 1197,
+          "maximumTorque": "11 kgm at 4200 rpm",
+          "maximumPower": "88 PS at 6000 rpm",
+          "fuelType": "Gasoline / 4-cylinder inline",
+          "fuelTankCapacityL": 36
+        },
+        "chassis": {
+          "driveSystem": "Front Wheel Drive",
+          "transmission": "5MT",
+          "boreAndStrokeMm": "72.5 x 72.5",
+          "steeringSystem": "Electronic Power Steering (EPS)",
+          "frontSuspension": "MacPherson Strut with Coil Spring and Stabilizer",
+          "rearSuspension": "Semi Independent Torsion Axle Beam with Coil Spring",
+          "frontBrake": "13 Disc, ventilated",
+          "rearBrake": "Drum 200",
+          "parkingSystem": "PKSA",
+          "parkingBrake": "Cable with button",
+          "tireSize": "175/65 R14",
+          "spareTire": "With grand tire (AL)"
+        },
+        "safety": {
+          "airbag": "With",
+          "absEbdBa": "With",
+          "parkingCamera": "Without",
+          "childRestraint": "ISOFIX rear row 2"
+        }
+      }
+    }
+  ],
+  "unavailableOnCurrentCatalog": [
+    {
+      "model": "Agya",
+      "note": "Tidak ditemukan sebagai halaman produk aktif pada menu Models saat verifikasi. URL /product/agya mengarah ke error 404."
+    }
+  ]
+}
