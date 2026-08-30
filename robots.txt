@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tamatunastoyota.pages.dev/sitemap.xml

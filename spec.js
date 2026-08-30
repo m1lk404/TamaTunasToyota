@@ -14,6 +14,22 @@ const specIntro = document.querySelector("#spec-intro");
 const specStatus = document.querySelector("#spec-status");
 const sections = document.querySelector("#spec-sections");
 const sourceLink = document.querySelector("#spec-source-link");
+const setMetaTag = (selector, content, attribute = "name") => {
+  const tag = document.head.querySelector(`meta[${attribute}="${selector}"]`) || document.createElement("meta");
+  tag.setAttribute(attribute, selector);
+  tag.setAttribute("content", content);
+  if (!tag.parentNode) document.head.appendChild(tag);
+  return tag;
+};
+const setCanonicalLink = (href) => {
+  let link = document.head.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement("link");
+    link.rel = "canonical";
+    document.head.appendChild(link);
+  }
+  link.href = href;
+};
 
 function findProduct(products) {
   const model = normalize(requestedModel);

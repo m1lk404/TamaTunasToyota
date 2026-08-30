@@ -12,6 +12,22 @@ const escapeHTML = (value) => String(value ?? "").replace(/[&<>'"]/g, (character
   '"': "&quot;",
 }[character]));
 const getUnitName = (unit) => unit.unitName || unit.name;
+const setMetaTag = (selector, content, attribute = "name") => {
+  const tag = document.head.querySelector(`meta[${attribute}="${selector}"]`) || document.createElement("meta");
+  tag.setAttribute(attribute, selector);
+  tag.setAttribute("content", content);
+  if (!tag.parentNode) document.head.appendChild(tag);
+  return tag;
+};
+const setCanonicalLink = (href) => {
+  let link = document.head.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement("link");
+    link.rel = "canonical";
+    document.head.appendChild(link);
+  }
+  link.href = href;
+};
 const locationInfo = {
   dealer: salesInfo?.dealer || "Toyota Tunas",
   branch: salesInfo?.branch || "Cabang Toyota Bandung",
@@ -36,6 +52,58 @@ $("#car-price").textContent = "Memuat OTR...";
 $("#car-image").src = car.image;
 $("#car-image").alt = car.name;
 $(".showcase__controls p").innerHTML = "<b>01</b> Geser atau gunakan panah untuk mengganti unit";
+
+const canonicalBase = (siteMeta?.baseUrl || window.location.origin || "https://tamatunastoyota.pages.dev").replace(/\/$/, "");
+const canonicalUrl = `${canonicalBase}/`;
+const seoTitle = `${siteMeta.title} | ${salesInfo.branch}`;
+const seoDescription = siteMeta.description;
+const seoKeywords = [...new Set((siteMeta.keywords || []).concat([salesInfo.name, salesInfo.branch, "Toyota Kiaracondong", "promo Toyota Bandung"]))].join(", ");
+
+document.title = seoTitle;
+setMetaTag("description", seoDescription, "name");
+setMetaTag("robots", "index,follow,max-image-preview:large", "name");
+setMetaTag("keywords", seoKeywords, "name");
+setMetaTag("og:title", seoTitle, "property");
+setMetaTag("og:description", seoDescription, "property");
+setMetaTag("og:type", siteMeta.ogType || "website", "property");
+setMetaTag("og:site_name", siteMeta.siteName || salesInfo.name, "property");
+setMetaTag("og:image", `${canonicalBase}/${siteMeta.image || cars[0].image}`, "property");
+setMetaTag("og:locale", siteMeta.locale || "id_ID", "property");
+setMetaTag("twitter:card", "summary_large_image", "name");
+setMetaTag("twitter:title", seoTitle, "name");
+setMetaTag("twitter:description", seoDescription, "name");
+setMetaTag("twitter:image", `${canonicalBase}/${siteMeta.image || cars[0].image}`, "name");
+setCanonicalLink(canonicalUrl);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  name: salesInfo.name,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: salesInfo.address,
+    addressLocality: "Bandung",
+    addressRegion: "Jawa Barat",
+    addressCountry: "ID",
+  },
+  telephone: `+62${salesInfo.whatsappNumber.replace(/^0/, "")}`,
+  url: canonicalBase,
+  image: `${canonicalBase}/${siteMeta.image || cars[0].image}`,
+  areaServed: "Bandung",
+  sameAs: [`https://wa.me/${salesInfo.whatsappNumber}`],
+  makesOffer: cars.map((item) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Product",
+      name: item.name,
+      model: item.model,
+      category: "Toyota",
+    },
+  })),
+};
+const scriptTag = document.createElement("script");
+scriptTag.type = "application/ld+json";
+scriptTag.textContent = JSON.stringify(structuredData, null, 2);
+document.head.appendChild(scriptTag);
 
 const generalLink = waHelper.generateLink("general");
 const unitLink = waHelper.generateLink("unit", { nameUnit: getUnitName(car) });
@@ -91,8 +159,52 @@ $("#car-image").addEventListener("error", () => {
 });
 
 const modelTabs = $("#model-tabs");
+const modelSelectTrigger = $("#model-select-trigger");
+const modelSelectPanel = $("#model-select-panel");
+const modelPickerGrid = $("#model-picker-grid");
+const modelSelectClose = $("#model-select-close");
+const activeModelLabel = $("#active-model-label");
 const priceGrid = $("#price-grid");
 const tableEmpty = $("#table-empty");
+
+function updateMobileSelectorLabel(selectedModel) {
+  const displayName = selectedModel || "Pilih Model Toyota";
+  if (activeModelLabel) activeModelLabel.textContent = displayName;
+  if (modelSelectTrigger) {
+    const triggerText = selectedModel ? `Pilih Model: ${selectedModel}` : "Pilih Model Toyota";
+    modelSelectTrigger.setAttribute("aria-label", triggerText);
+  }
+}
+
+function setModelSelectionState(selectedModel) {
+  document.querySelectorAll(".model-tab").forEach((item) => {
+    const active = item.dataset.model === selectedModel;
+    item.classList.toggle("is-active", active);
+    item.setAttribute("aria-selected", String(active));
+  });
+
+  if (modelPickerGrid) {
+    modelPickerGrid.querySelectorAll(".model-picker-option").forEach((item) => {
+      const active = item.dataset.model === selectedModel;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  updateMobileSelectorLabel(selectedModel || "");
+}
+
+function openMobileModelPicker() {
+  if (!modelSelectPanel || !modelSelectTrigger) return;
+  modelSelectPanel.hidden = false;
+  modelSelectTrigger.setAttribute("aria-expanded", "true");
+}
+
+function closeMobileModelPicker() {
+  if (!modelSelectPanel || !modelSelectTrigger) return;
+  modelSelectPanel.hidden = true;
+  modelSelectTrigger.setAttribute("aria-expanded", "false");
+}
 
 function formatPrice(value) {
   if (!value || value === "-") return "-";
@@ -116,6 +228,14 @@ function getPriceColumns(types) {
 }
 
 function renderPriceList(categories, activeModel) {
+  if (!activeModel) {
+    $("#pricelist-meta").textContent = "Pilih model Toyota untuk melihat OTR.";
+    priceGrid.innerHTML = "";
+    tableEmpty.hidden = false;
+    tableEmpty.textContent = "Pilih model Toyota untuk melihat daftar tipe dan OTR.";
+    return;
+  }
+
   const category = categories.find((item) => item.model === activeModel) || categories[0];
   const sourceUrl = `./spec.html?model=${encodeURIComponent(category.model)}&type=`;
   const columns = getPriceColumns(category.types);
@@ -126,6 +246,7 @@ function renderPriceList(categories, activeModel) {
     return `<article class="price-card" data-spec-url="${escapeHTML(`${sourceUrl}${encodeURIComponent(type.name)}`)}" tabindex="0" role="link" aria-label="Lihat spesifikasi ${escapeHTML(type.name)}"><div class="price-card__top"><span class="variant-model">${escapeHTML(category.model)}</span><span class="card-number">${String(index + 1).padStart(2, "0")}</span></div><h3>${escapeHTML(type.name)}</h3><div class="price-options">${prices}</div><a class="price-card__cta" href="${escapeHTML(link)}" target="_blank" rel="noopener noreferrer" aria-label="Hitung DP untuk ${escapeHTML(type.name)}"><span>◌</span> Hitung DP / Simulasi Kredit <b>↗</b></a><span class="price-card__spec">Lihat spesifikasi resmi <b>↗</b></span></article>`;
   }).join("");
   tableEmpty.hidden = category.types.length > 0;
+  tableEmpty.textContent = "Belum ada data harga untuk model ini.";
 }
 
 priceGrid.addEventListener("click", (event) => {
@@ -154,16 +275,66 @@ fetch("./data/pricelist.json")
     $("#car-stage-label").textContent = `${car.model || car.name} · ${car.tag}`;
     renderCar(activeCarIndex);
     modelTabs.innerHTML = data.categories.map((category, index) => `<button class="model-tab${index === 0 ? " is-active" : ""}" type="button" role="tab" aria-selected="${index === 0}" data-model="${escapeHTML(category.model)}">${escapeHTML(category.model)}</button>`).join("");
+
+    if (modelPickerGrid) {
+      modelPickerGrid.innerHTML = data.categories.map((category) => `<button class="model-picker-option" type="button" data-model="${escapeHTML(category.model)}" aria-pressed="false">${escapeHTML(category.model)}</button>`).join("");
+    }
+
+    function selectModel(modelName) {
+      setModelSelectionState(modelName);
+      renderPriceList(data.categories, modelName);
+      closeMobileModelPicker();
+    }
+
     modelTabs.addEventListener("click", (event) => {
       const tab = event.target.closest(".model-tab");
       if (!tab) return;
-      document.querySelectorAll(".model-tab").forEach((item) => {
-        item.classList.toggle("is-active", item === tab);
-        item.setAttribute("aria-selected", item === tab);
-      });
-      renderPriceList(data.categories, tab.dataset.model);
+      selectModel(tab.dataset.model);
     });
-    renderPriceList(data.categories, data.categories[0].model);
+
+    if (modelPickerGrid) {
+      modelPickerGrid.addEventListener("click", (event) => {
+        const button = event.target.closest(".model-picker-option");
+        if (!button) return;
+        selectModel(button.dataset.model);
+      });
+    }
+
+    if (modelSelectTrigger) {
+      modelSelectTrigger.addEventListener("click", () => {
+        const isHidden = modelSelectPanel && modelSelectPanel.hidden === false;
+        if (isHidden) {
+          closeMobileModelPicker();
+        } else {
+          openMobileModelPicker();
+        }
+      });
+    }
+
+    if (modelSelectClose) {
+      modelSelectClose.addEventListener("click", closeMobileModelPicker);
+    }
+
+    if (modelSelectPanel) {
+      modelSelectPanel.addEventListener("click", (event) => {
+        if (event.target === modelSelectPanel) closeMobileModelPicker();
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modelSelectPanel && modelSelectPanel.hidden === false) {
+        closeMobileModelPicker();
+      }
+    });
+
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (isMobile) {
+      renderPriceList(data.categories, "");
+      updateMobileSelectorLabel("");
+    } else {
+      renderPriceList(data.categories, data.categories[0].model);
+      updateMobileSelectorLabel(data.categories[0].model);
+    }
   })
   .catch(() => {
     $("#pricelist-meta").textContent = "Data pricelist belum dapat dimuat.";
